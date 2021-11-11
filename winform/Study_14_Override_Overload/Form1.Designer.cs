@@ -125,10 +125,12 @@
             this.Controls.Add(this.btnOneCycle);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.pMain);
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.KeyDown += Form1_KeyDown;
             this.ResumeLayout(false);
 
         }

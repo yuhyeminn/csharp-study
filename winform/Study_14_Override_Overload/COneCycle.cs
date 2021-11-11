@@ -9,16 +9,16 @@ namespace Study_13_Inheritance
 {
     class COneCycle : CBase
     {
-        public Rectangle _rtCircle; // 바퀴
-        public Rectangle _rtSquare; // 몸통
+        public Rectangle _rtCircle1; // 바퀴
+        public Rectangle _rtSquare1; // 몸통
 
         public COneCycle(string sName)
         {
             strName = sName;
             _Pen = new Pen(Color.WhiteSmoke, 3);
 
-            _rtCircle = new Rectangle(120, 150, 120, 120);
-            _rtSquare = new Rectangle(150, 30, 60, 120);
+            _rtCircle1 = new Rectangle(120, 150, 120, 120);
+            _rtSquare1 = new Rectangle(150, 30, 60, 120);
         }
 
         public Pen fPenInfo()
@@ -26,11 +26,24 @@ namespace Study_13_Inheritance
             return _Pen;
         }
 
+        // Overloading
+        public Pen fPenInfo(Color oColor)
+        {
+            _Pen = new Pen(oColor);
+            return _Pen;
+        }
+
+        public Pen fPenInfo(Color oColor, int iWidth)
+        {
+            _Pen = new Pen(oColor, iWidth);
+            return _Pen;
+        }
+
         /// <summary>
         /// 외부에서 호출 가능하도록
         /// </summary>
         /// <param name="iMove"></param>
-        public void fMove(int iMove)
+        public virtual void fMove(int iMove)
         {
             fCircleMove(iMove);
             fSquareMove(iMove);
@@ -42,16 +55,16 @@ namespace Study_13_Inheritance
         /// <param name="iMove"></param>
         protected void fCircleMove(int iMove)
         {
-            Point oPoint = _rtCircle.Location;
+            Point oPoint = _rtCircle1.Location;
             oPoint.X = oPoint.X + iMove;
-            _rtCircle.Location = oPoint;
+            _rtCircle1.Location = oPoint;
         }
 
         protected void fSquareMove(int iMove)
         {
-            Point oPoint = _rtSquare.Location;
+            Point oPoint = _rtSquare1.Location;
             oPoint.X = oPoint.X + iMove;
-            _rtSquare.Location = oPoint;
+            _rtSquare1.Location = oPoint;
         }
 
     }

@@ -20,6 +20,7 @@ namespace Study_13_Inheritance
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -27,6 +28,18 @@ namespace Study_13_Inheritance
             _cOC = new COneCycle("외발자전거");
             _cC = new CCycle("자전거");
             _cCar = new CCar("자동차");
+        }
+
+        private void Form1_KeyDown(object sender, System.Windows.Forms.KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Q)
+            {
+                fMoving(-5);
+            }
+            else if(e.KeyCode == Keys.W)
+            {
+                fMoving(5);
+            }
         }
 
         private void btnOneCycle_Click(object sender, EventArgs e)
@@ -55,10 +68,10 @@ namespace Study_13_Inheritance
             lblName.Text = _cOC.strName;
 
             Graphics g = pMain.CreateGraphics();
-            Pen p = _cOC.fPenInfo();
+            Pen p = _cOC.fPenInfo(Color.Bisque, 10);
 
-            g.DrawRectangle(p, _cOC._rtSquare);
-            g.DrawEllipse(p, _cOC._rtCircle);
+            g.DrawRectangle(p, _cOC._rtSquare1);
+            g.DrawEllipse(p, _cOC._rtCircle1);
         }
 
         /// <summary>
@@ -69,7 +82,7 @@ namespace Study_13_Inheritance
             lblName.Text = _cC.strName;
 
             Graphics g = pMain.CreateGraphics();
-            Pen p = _cC.fPenInfo();
+            Pen p = _cC.fPenInfo(Color.Cyan, 2);
 
             g.DrawRectangle(p, _cC._rtSquare1);
             g.DrawEllipse(p, _cC._rtCircle1);
@@ -84,7 +97,7 @@ namespace Study_13_Inheritance
             lblName.Text = _cCar.strName;
 
             Graphics g = pMain.CreateGraphics();
-            Pen p = _cCar.fPenInfo();
+            Pen p = _cCar.fPenInfo(Color.Gold, 5);
 
             g.DrawRectangle(p, _cCar._rtSquare1);
             g.DrawRectangle(p, _cCar._rtSquare2);
@@ -101,42 +114,30 @@ namespace Study_13_Inheritance
 
         private void btnLeft_Click(object sender, EventArgs e)
         {
-            fClearPanel();
-
-            switch(lblName.Text)
-            {
-                case "외발자전거":
-                    _cOC.fMove(-5);
-                    fOneCycleDraw();
-                    break;
-                case "자전거":
-                    _cC.fMove(-5);
-                    fCycleDraw();
-                    break;
-                case "자동차":
-                    _cCar.fMove(-5);
-                    fCarDraw();
-                    break;
-            }
-           
+            fMoving(-5);
         }
 
         private void btnRight_Click(object sender, EventArgs e)
+        {
+            fMoving(5);
+        }
+
+        private void fMoving(int iMove)
         {
             fClearPanel();
 
             switch (lblName.Text)
             {
                 case "외발자전거":
-                    _cOC.fMove(5);
+                    _cOC.fMove(iMove);
                     fOneCycleDraw();
                     break;
                 case "자전거":
-                    _cC.fMove(5);
+                    _cC.fMove(iMove);
                     fCycleDraw();
                     break;
                 case "자동차":
-                    _cCar.fMove(5);
+                    _cCar.fMove(iMove);
                     fCarDraw();
                     break;
             }

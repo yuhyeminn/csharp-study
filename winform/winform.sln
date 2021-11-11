@@ -27,6 +27,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study_11_Struct", "Study_11
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study_13_Inheritance", "Study_13_Inheritance\Study_13_Inheritance.csproj", "{6549172C-B382-4D86-9E39-181AF14AFADE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study_14_Override_Overload", "Study_14_Override_Overload\Study_14_Override_Overload.csproj", "{D1691156-B8DA-49E1-9603-15724BAAB093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study_15_Encapsulation_PartialClass", "Study_15_Encapsulation_PartialClass\Study_15_Encapsulation_PartialClass.csproj", "{44DC040C-F41A-4F22-845B-6404851BB9B9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Study_16_StreamReader_StreamWriter", "Study_16_StreamReader_StreamWriter\Study_16_StreamReader_StreamWriter.csproj", "{36B0B4E4-DEAF-4A42-B7BF-58A19B6E4DC1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +87,18 @@ Global
 		{6549172C-B382-4D86-9E39-181AF14AFADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6549172C-B382-4D86-9E39-181AF14AFADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6549172C-B382-4D86-9E39-181AF14AFADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1691156-B8DA-49E1-9603-15724BAAB093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1691156-B8DA-49E1-9603-15724BAAB093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1691156-B8DA-49E1-9603-15724BAAB093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1691156-B8DA-49E1-9603-15724BAAB093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44DC040C-F41A-4F22-845B-6404851BB9B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44DC040C-F41A-4F22-845B-6404851BB9B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44DC040C-F41A-4F22-845B-6404851BB9B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44DC040C-F41A-4F22-845B-6404851BB9B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B0B4E4-DEAF-4A42-B7BF-58A19B6E4DC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B0B4E4-DEAF-4A42-B7BF-58A19B6E4DC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B0B4E4-DEAF-4A42-B7BF-58A19B6E4DC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B0B4E4-DEAF-4A42-B7BF-58A19B6E4DC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
