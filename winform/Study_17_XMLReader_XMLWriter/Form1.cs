@@ -9,10 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 
-namespace Study_16_StreamReader_StreamWriter
+namespace Study_17_XMLReader_XMLWriter
 {
     public partial class Form1 : Form
     {
+        CXMLControl _XML = new CXMLControl();
+        Dictionary<string, string> _dData = new Dictionary<string, string>();
+
         public Form1()
         {
             InitializeComponent();
@@ -31,37 +34,37 @@ namespace Study_16_StreamReader_StreamWriter
                 .Append(iNumber.ToString() + strEnter);
 
             tboxConfigData.Text = sb.ToString();
+
+            //////////// Dictionary에 Config 저장
+            _dData.Clear();
+
+            _dData.Add(CXMLControl._TEXT_DATA, strText);
+            _dData.Add(CXMLControl._CBOX_DATA, bChecked.ToString());
+            _dData.Add(CXMLControl._NUMBER_DATA, iNumber.ToString());
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
         {
             string strFilePath = string.Empty;
             SFDialog.InitialDirectory = Application.StartupPath; // 프로그램 실행 파일 위치
-            SFDialog.FileName = "*.txt";
-            SFDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            SFDialog.FileName = "*.xml";
+            SFDialog.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
 
             if (SFDialog.ShowDialog() == DialogResult.OK)
             {
                 strFilePath = SFDialog.FileName;
 
-                //StreamWriter swSFDialog = new StreamWriter(strFilePath);
-
-                //swSFDialog.WriteLine(tboxConfigData.Text);
-                //swSFDialog.Close();
-
-                // 위의 3줄을 아래 한줄로 대체 가능
-                File.WriteAllText(strFilePath, tboxConfigData.Text);
+                _XML.fXML_Writer(strFilePath, _dData);
             }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
-            //string strEnter = "\r\n";
-
             string strFilePath = string.Empty;
             OFDialog.InitialDirectory = Application.StartupPath; // 프로그램 실행 파일 위치
-            OFDialog.FileName = "*.txt";
-            OFDialog.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
+            OFDialog.FileName = "*.xml";
+            OFDialog.Filter = "xml files (*.xml)|*.xml|All files (*.*)|*.*";
 
             StringBuilder sb = new StringBuilder();
 
@@ -69,31 +72,21 @@ namespace Study_16_StreamReader_StreamWriter
             {
                 strFilePath = OFDialog.FileName;
 
-                //StreamReader srOFDialog = new StreamReader(strFilePath, Encoding.UTF8, true);
-
-                //while (srOFDialog.EndOfStream == false)
-                //{
-                //    sb.Append(srOFDialog.ReadLine());
-                //    sb.Append(strEnter);
-                //}
-
-                // 위의 코드를 아래 한줄로 대체 가능
                 sb.Append(File.ReadAllText(strFilePath));
 
-                // 배열로 읽어옴
-                // string[] dd = File.ReadAllLines(strFilePath);
-
+                // 화면에 출력
                 tboxConfigData.Text = sb.ToString();
+
+                _dData.Clear();
+                _dData = _XML.fXML_Reader(strFilePath);
             }
         }
 
         private void btnConfigRead_Click(object sender, EventArgs e)
         {
-            string[] strConfig = tboxConfigData.Text.Split(new char[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
-
-            tboxData.Text = strConfig[0];
-            cboxData.Checked = bool.Parse(strConfig[1]);
-            numData.Value = int.Parse(strConfig[2]);
+            tboxData.Text = _dData[CXMLControl._TEXT_DATA];
+            cboxData.Checked = bool.Parse(_dData[CXMLControl._CBOX_DATA]);
+            numData.Value = int.Parse(_dData[CXMLControl._NUMBER_DATA]);
         }
     }
 }
