@@ -18,7 +18,6 @@ namespace Study_25_Delegate2
 
         private bool BOrderComplete = false;
 
-
         public FrmPizza()
         {
             InitializeComponent();
