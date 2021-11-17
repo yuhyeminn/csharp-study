@@ -51,6 +51,7 @@
             // 
             // pboxFace
             // 
+            this.pboxFace.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pboxFace.Location = new System.Drawing.Point(73, 14);
             this.pboxFace.Name = "pboxFace";
             this.pboxFace.Size = new System.Drawing.Size(100, 117);
@@ -102,6 +103,7 @@
             this.btnReg.TabIndex = 6;
             this.btnReg.Text = "수배";
             this.btnReg.UseVisualStyleBackColor = false;
+            this.btnReg.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnIndle
             // 
@@ -112,6 +114,7 @@
             this.btnIndle.TabIndex = 7;
             this.btnIndle.Text = "정지";
             this.btnIndle.UseVisualStyleBackColor = false;
+            this.btnIndle.Click += new System.EventHandler(this.btn_Click);
             // 
             // btnCatch
             // 
@@ -122,6 +125,7 @@
             this.btnCatch.TabIndex = 8;
             this.btnCatch.Text = "잡힘";
             this.btnCatch.UseVisualStyleBackColor = false;
+            this.btnCatch.Click += new System.EventHandler(this.btn_Click);
             // 
             // UCInfo
             // 

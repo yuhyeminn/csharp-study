@@ -15,6 +15,28 @@ namespace Study_29_UserControl
         public Form1()
         {
             InitializeComponent();
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            foreach (var oControl in pMain.Controls)
+            {
+                if (oControl is UCInfo)
+                {
+                    UCInfo oInfo = oControl as UCInfo;
+                    oInfo.eventdelSender += OInfo_eventdelSender;
+                }
+            }
+        }
+
+        private int OInfo_eventdelSender(object Sender, string strText)
+        {
+            UCInfo oInfo = Sender as UCInfo;
+
+            lboxList.Items.Add(string.Format("{0} ) {1}", oInfo.UserName, strText));
+
+            return 0;
         }
     }
 }
