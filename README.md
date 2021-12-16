@@ -43,7 +43,7 @@
 - [28. 예외처리(Exception)](https://github.com/yuhyeminn/csharp-study/tree/main/winform/Study_28_Exception)
 - [29. 사용자 정의 컨트롤(UserControl](https://github.com/yuhyeminn/csharp-study/tree/main/winform/Study_29_UserControl)
 - [30. 람다식(Lambda)](https://github.com/yuhyeminn/csharp-study/tree/main/winform/Study_30_Lambda)
-- [31. LinQ]((https://github.com/yuhyeminn/csharp-study/tree/main/winform/Study_31_Linq))
+- [31. LinQ](https://github.com/yuhyeminn/csharp-study/tree/main/winform/Study_31_Linq)
 - [33. 동적 Layout (TableLayoutPanel, SplitContainer)](https://github.com/yuhyeminn/csharp-study/tree/main/winform/Study_33_Layout)
 - [34. Layout간 Event 제어 (FlowLayoutPanel)](https://github.com/yuhyeminn/csharp-study/tree/main/winform/Study_34_LayoutEventControl)
 
